@@ -1,0 +1,7 @@
+name: Invstick
+version: ${project.version}
+main: cf.mcskygames.invstick.Plugin
+api-version: 1.16
+
+commands:
+  Invstick:
