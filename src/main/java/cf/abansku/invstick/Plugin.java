@@ -1,4 +1,4 @@
-package cf.mcskygames.invstick;
+package cf.abansku.invstick;
 
 import org.bukkit.Material;
 import org.bukkit.command.Command;

@@ -1,4 +1,4 @@
-package cf.mcskygames.invstick;
+package cf.abansku.invstick;
 
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
