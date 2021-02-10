@@ -9,6 +9,8 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 public class Listeners implements Listener {
+    public PotionEffect effect = new PotionEffect(PotionEffectType.INVISIBILITY, 600, 2);
+
     public Listeners(Plugin plugin) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
@@ -18,7 +20,6 @@ public class Listeners implements Listener {
             Player damager = (Player) event.getDamager();
             Player player = (Player) event.getEntity();
             if(damager.getInventory().getItemInMainHand().containsEnchantment(CustomEnchant.INVISIBILITY)) {
-                PotionEffect effect = new PotionEffect(PotionEffectType.INVISIBILITY, 600, 2);
                 player.addPotionEffect(effect);
             }
         }
@@ -26,7 +27,6 @@ public class Listeners implements Listener {
             Player player = (Player) event.getDamager();
             LivingEntity entity = (LivingEntity) event.getEntity();
             if(player.getInventory().getItemInMainHand().containsEnchantment(CustomEnchant.INVISIBILITY)) {
-                PotionEffect effect = new PotionEffect(PotionEffectType.INVISIBILITY, 600, 2);
                 entity.addPotionEffect(effect);
             }
         }
