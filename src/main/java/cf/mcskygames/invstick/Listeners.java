@@ -13,13 +13,13 @@ public class Listeners implements Listener {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
     }
     @EventHandler
-    public void playerAttack(EntityDamageByEntityEvent event) {
+    public void playerAttackEvent(EntityDamageByEntityEvent event) {
         if(event.getEntity() instanceof Player && event.getDamager() instanceof Player) {
-            Player player = (Player) event.getDamager(); // Player who hit the other player/entity
-            Player hitPlayer = (Player) event.getEntity();
-            if(player.getInventory().getItemInMainHand().containsEnchantment(CustomEnchant.INVISIBILITY)) {
-                PotionEffect effect = new PotionEffect(PotionEffectType.INVISIBILITY, 60, 2);
-                hitPlayer.addPotionEffect(effect);
+            Player damager = (Player) event.getDamager();
+            Player player = (Player) event.getEntity();
+            if(damager.getInventory().getItemInMainHand().containsEnchantment(CustomEnchant.INVISIBILITY)) {
+                PotionEffect effect = new PotionEffect(PotionEffectType.INVISIBILITY, 600, 2);
+                player.addPotionEffect(effect);
             }
         }
         if(event.getEntity() instanceof LivingEntity && event.getDamager() instanceof Player) {

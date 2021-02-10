@@ -15,14 +15,12 @@ public class CustomEnchant {
             registerEnchantment(INVISIBILITY);
     }
     public static void registerEnchantment(Enchantment enchantment) {
-        boolean registered = true;
         try {
             Field f = Enchantment.class.getDeclaredField("acceptingNew");
             f.setAccessible(true);
             f.set(null, true);
             Enchantment.registerEnchantment(enchantment);
         } catch (Exception e) {
-            registered = false;
             e.printStackTrace();
         }
     }
